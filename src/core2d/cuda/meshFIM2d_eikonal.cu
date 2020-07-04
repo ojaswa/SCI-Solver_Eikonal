@@ -637,8 +637,9 @@ std::vector< std::vector< float > >  meshFIM2dEikonal::GenerateData(int numBlock
     int seedBelongToBlock = m_PartitionLabel[seed];
     h_blockCon[seedBelongToBlock] = 0;
     for(int j = 0; j < blockVertMapping[seed].size(); j++)
-    {
-      h_triMem[blockVertMapping[seed][j]] = 0.0;
+    { 
+      //h_triMem[blockVertMapping[seed][j]] = 0.0;
+      h_triMem[blockVertMapping[seed][j]] = this->m_meshPtr->vertT[seed];
     }
   }
 

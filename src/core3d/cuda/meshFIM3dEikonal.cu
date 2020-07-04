@@ -344,7 +344,8 @@ std::vector < std::vector < float > >  meshFIM3dEikonal::GenerateData(size_t max
     h_BlockLabel[seedBelongToBlock] = ACTIVE;
     for(int j = 0; j < m_blockVertMapping[seed].size(); j++)
     {
-      h_tetT[m_blockVertMapping[seed][j]] = 0.0;
+      //h_tetT[m_blockVertMapping[seed][j]] = 0.0;
+      h_tetT[m_blockVertMapping[seed][j]] = this->m_meshPtr->vertT[seed];
     }
   }
 

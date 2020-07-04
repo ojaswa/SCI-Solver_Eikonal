@@ -151,7 +151,8 @@ void Eikonal::solveEikonal() {
     } else {
       std::vector<int> found_seeds;
       for (size_t i = 0; i < this->triMesh_->vertices.size(); i++) {
-        if (this->triMesh_->vertT[i] == 0.) {
+        //if (this->triMesh_->vertT[i] == 0.) {
+        if (this->triMesh_->vertT[i] < LARGENUM) {
           found_seeds.push_back(static_cast<int>(i));
         }
       }
@@ -194,7 +195,8 @@ void Eikonal::solveEikonal() {
     } else {
       std::vector<int> found_seeds;
       for (size_t i = 0; i < this->tetMesh_->vertices.size(); i++) {
-        if (this->tetMesh_->vertT[i] == 0.) {
+        //if (this->tetMesh_->vertT[i] == 0.) {
+        if (this->tetMesh_->vertT[i] < LARGENUM) {
           found_seeds.push_back(static_cast<int>(i));
         }
       }
